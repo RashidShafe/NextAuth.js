@@ -11,13 +11,13 @@ const Navbar = () => {
             <div className="container mx-auto">
                 <ul className="flex flex-col justify-between h-screen ">
                     <div className="one">
-                        <li className="mx-4 mt-5">
+                        <li className="ml-4 pr-4 mt-5 border-b-2 border-emerald-400">
                             <Link href='/' className="text-white font-bold">
                                 Home
                             </Link>
                         </li>
 
-                        <li className="mx-4 mt-5">
+                        <li className="ml-4 pr-4 mt-5 border-b-2 border-emerald-400">
                             <Link href='/dashboard' className="text-white font-bold">
                                 Dashboard
                             </Link>
