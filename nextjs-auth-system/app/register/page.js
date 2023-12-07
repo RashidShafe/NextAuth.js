@@ -32,7 +32,7 @@ const page = () => {
         }
         else if(password !== confirmPassword){
             toast.warn("Password not Matched")
-            retrun
+            return
         }
 
         try {
@@ -47,7 +47,6 @@ const page = () => {
                 })
             })
 
-            
             if(res.status === 400){
                 toast.error(res.error)
             }
@@ -63,8 +62,7 @@ const page = () => {
             return <h1> Loadings..... </h1>
         }
     }
-
-
+    
     return sessionStatus !== 'authenticated' && (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="bg-white rounded shadow-md w-96 p-8">

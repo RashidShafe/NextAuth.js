@@ -5,7 +5,6 @@ import bcrypt from 'bcryptjs'
 import { NextResponse } from "next/server"
 
 export const POST = async (req) => {
-    console.log("on route")
     const { username, email, password, confirmPassword } = await req.json()
 
     if (password !== confirmPassword) {
@@ -35,5 +34,4 @@ export const POST = async (req) => {
         console.log("error")
         return new NextResponse(error, { status: 500 })
     }
-
 }
