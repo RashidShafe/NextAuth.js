@@ -46,16 +46,19 @@ const page = () => {
                     confirmPassword
                 })
             })
+            const msg = await res.json();
+            console.log(msg);
 
+            //get the message from converted json but status code still in the initial response data format.
             if(res.status === 400){
-                toast.error(res.error)
+                toast.error(msg.error)
             }
             else if(res.status === 201){
                 router.push('/login')
             }
             
         } catch (error) {
-            toast.error("wrong");
+            toast.error(error);
         }
 
         if(sessionStatus === 'loading'){

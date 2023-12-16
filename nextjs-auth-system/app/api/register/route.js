@@ -16,7 +16,8 @@ export const POST = async (req) => {
     const existingUser = await User.findOne({ email })
 
     if (existingUser) {
-        return new NextResponse(JSON.stringify({ error: "User exist" }, { status: 400 }))
+        return NextResponse.json({ error: "User exist"}, { status: 400 })
+        // return new NextResponse(JSON.stringify({ error: "User exist" }, { status: 400 }))
     }
 
     const hashedPassword = await bcrypt.hash(password, 3);
