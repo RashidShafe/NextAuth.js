@@ -8,7 +8,8 @@ export const POST = async (req) => {
     const { username, email, password, confirmPassword } = await req.json()
 
     if (password !== confirmPassword) {
-        return new NextResponse(JSON.stringify({ error: "Password Not Matched" }, { status: 400 }));
+        return NextResponse.json({ error: "Password Not Matched"}, { status: 400 })
+        // return new NextResponse(JSON.stringify({ error: "Password Not Matched" }, { status: 400 }))
     }
 
     await connectDB();
