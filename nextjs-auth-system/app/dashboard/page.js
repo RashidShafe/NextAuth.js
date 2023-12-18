@@ -5,7 +5,7 @@ const Dashboard = async() => {
     const session = await getServerSession();
 
     if(!session){
-        redirect("/")
+        redirect("/login")
     }
 
     return (

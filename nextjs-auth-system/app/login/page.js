@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { signIn, useSession } from "next-auth/react"
 
+import Link from "next/link"
 import { toast } from "react-toastify"
 
 const Login = () => {
@@ -33,15 +33,12 @@ const Login = () => {
             email, password
         })
 
-        console.log(res)
-
         if(res?.error){
             toast.error("Invalid credentials")
         }else{
             toast.success("Succesfully Logged in")
         }
     }
-
 
     return (
         sessionStatus !== "authenticated" && (
@@ -72,7 +69,6 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-
         )
     )
 }
