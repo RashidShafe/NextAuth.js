@@ -14,7 +14,7 @@ export const authOptions = {
             credentials:{
                 email:{
                     label: 'Email',
-                    type: 'text'
+                    type: 'text',
                 },
                 password:{
                     label: 'Password',
@@ -27,12 +27,12 @@ export const authOptions = {
 
                 try {
                     const user = await User.findOne({email: credentials.email})
-
+                    
                     if(user){
                         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
 
                         if(isPasswordCorrect){
-                            return user;
+                            return user
                         }
                     }
                 } catch (error) {
@@ -45,7 +45,7 @@ export const authOptions = {
     callbacks:{
         async signIn({user, account}){
             if(account?.provider == 'credentials'){
-                return true
+                return user
             }
         }
     }

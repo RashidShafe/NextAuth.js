@@ -5,6 +5,8 @@ import { signOut, useSession } from "next-auth/react"
 
 const Navbar = () => {
     const { data: session } = useSession();
+    console.log(session?.user)
+    console.log(session?.user?.username)
 
     return (
         <nav className=" bg-black fixed p-4">
@@ -42,6 +44,7 @@ const Navbar = () => {
                         <>
                         <div className="text-white mb-10">
                             <p className="text-sm font-mono mb-2">{session.user?.email}</p>
+                            <p className="text-sm font-mono mb-2">{session.user?.username}</p>
                             <li className="ml-4 pr-4 mt-5 border-b-2 border-red-400">
                                 <button onClick={()=>{signOut()}}>Sign Out</button>
                             </li>

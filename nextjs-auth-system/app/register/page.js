@@ -62,7 +62,7 @@ const page = () => {
         }
 
         if(sessionStatus === 'loading'){
-            return <h1> Loadings..... </h1>
+            return <h1> Loading..... </h1>
         }
     }
     
@@ -133,7 +133,6 @@ const page = () => {
                         <Link href="/login" className="ml-2 text-blue-600 hover:underline">
                             Login
                         </Link>
-
                     </div>
                 </form>
             </div>

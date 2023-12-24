@@ -33,7 +33,7 @@ export const POST = async (req) => {
         await newUser.save()
         return new NextResponse('User successfully registered', { status: 201 })
     } catch (error) {
-        console.log("error")
+        console.log(error)
         return new NextResponse(error, { status: 500 })
     }
 }
