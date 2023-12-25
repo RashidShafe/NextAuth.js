@@ -45,7 +45,8 @@ export const authOptions = {
     callbacks:{
         async signIn({user, account}){
             if(account?.provider == 'credentials'){
-                return user
+                user.name=user.username;
+                return true
             }
         }
     }
